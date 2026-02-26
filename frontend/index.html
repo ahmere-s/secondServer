@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>Tester</title>
-        <link rel="stylesheet" href="main.css">
-    </head>
+  <head>
+    <title>Tester</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
 
 
-    <body>
-        <h1>&lt;Welcome, User&gt;</h1>
+  <body>
+    <h1>&lt;Welcome, User&gt;</h1>
 
-	<script src="app.js"></script>
-    </body>
+    <script>
+      async function createUser(){
+	const res = await fetch("http://localhost:8080/users", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({name: "ahmere", email: "ahmere@example.com"})});
+        
+        const data = await res.json();
+	console.log(data);
+      }
+
+      async function loadUsers(){
+        const res = await fetch("http://localhost:8080/users");
+	const users = await res.json();
+        console.log(users);
+      }
+
+      createUser();
+      loadUsers();
+    </script>
+  </body>
 </html>
