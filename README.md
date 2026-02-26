@@ -1,6 +1,6 @@
-#Beginner Go Server
+# Beginner Go Server
 
-##Dependencies
+## Dependencies
 - github.com/gin-gonic/gin
 - github.com/gin-contrib/cors
 
