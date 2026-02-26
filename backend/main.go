@@ -11,7 +11,7 @@ func main(){
   r := gin.Default()
   
   //enable CORS for frontend
-  r.Use(cors.Deafault())
+  r.Use(cors.Default())
 
   //health check
   r.GET("/health", func(c *gin.Context){
