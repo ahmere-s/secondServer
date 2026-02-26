@@ -21,6 +21,8 @@ func main(){
   r.GET("/users", handlers.GetUsers)
   r.POST("/users", handlers.CreateUser)
 
+  r.Static("/static", "../frontend") //Serving html at root
+
   //run backend on port 8080
   r.Run(":8080")
 }
